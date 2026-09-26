@@ -17,7 +17,7 @@ python src/normalize.py dataset work          # 1. normalize all 6 source files 
 python src/run_block.py work train 8          # 2. candidate generation (train)
 python src/run_block.py work test 8           # 3. candidate generation (test)
 python src/train.py work dataset 8            # 4. train matcher, tune threshold on out-of-fold F0.5
-cd src && python predict.py ../work ../output && cd ..   # 5. write output/*.tsv
+python src/predict.py work output              # 5. write output/*.tsv
 python utils/validate_submission.py --matching output/matching_results.tsv \
     --candidate output/candidate_pairs.tsv --test-dir dataset/test
 ```
